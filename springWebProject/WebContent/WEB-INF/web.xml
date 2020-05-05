@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>springWebProject</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- 配置spring-web.jar提供的监听器，告诉tomcat启动就加载IOC容器（applicationContext.xml） -->
+  <listener>
+  		<listener-class> org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- 配置applicationContext.xml的位置 -->
+  <!-- 可以不配置，但是必须放在WEB-INFO目录下,而且文件名必须为applicationContext.xml -->
+  <context-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<!-- 可以配置多个配置文件 <param-value> -->
+		<param-value>classpath:applicationContext-*.xml</param-value>
+  </context-param>
+  
+ <!--  <servlet>
+  	<servlet-name>/TestServlet</servlet-name>
+  	<servlet-class>org.wudou.servlet.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>/TestServlet</servlet-name>
+  	<url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping> -->
+</web-app>
